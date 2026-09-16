@@ -1,0 +1,507 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <h2>🌍 Universal Responsive Design Test</h2>
+    <p>This page tests responsive design across <strong>ALL devices</strong> - from small phones to ultra-wide monitors.</p>
+    <div class="btn-group" style="margin-bottom: 20px;">
+        <button class="btn outline" onclick="simulateDevice('mobile')">📱 Mobile (375px)</button>
+        <button class="btn outline" onclick="simulateDevice('tablet')">📲 Tablet (768px)</button>
+        <button class="btn outline" onclick="simulateDevice('desktop')">💻 Desktop (1200px)</button>
+        <button class="btn outline" onclick="simulateDevice('ultrawide')">🖥️ Ultra-wide (1920px)</button>
+    </div>
+</div>
+
+<!-- Stats Cards Test -->
+<div class="cards">
+    <div class="card">
+        <div class="stat-label">
+            <i class="fas fa-users"></i>
+            Total Users
+        </div>
+        <div class="stat-value">1,234</div>
+        <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            +15%
+        </div>
+    </div>
+    <div class="card">
+        <div class="stat-label">
+            <i class="fas fa-seedling"></i>
+            Active Projects
+        </div>
+        <div class="stat-value">56</div>
+        <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            +8%
+        </div>
+    </div>
+    <div class="card">
+        <div class="stat-label">
+            <i class="fas fa-coins"></i>
+            Credits Earned
+        </div>
+        <div class="stat-value">89,456</div>
+        <div class="stat-change negative">
+            <i class="fas fa-arrow-down"></i>
+            -3%
+        </div>
+    </div>
+    <div class="card">
+        <div class="stat-label">
+            <i class="fas fa-dollar-sign"></i>
+            Revenue
+        </div>
+        <div class="stat-value">$234K</div>
+        <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            +22%
+        </div>
+    </div>
+</div>
+
+<!-- Form Test -->
+<div class="card" style="margin-bottom: 24px;">
+    <div class="card" style="padding: 24px;">
+        <h3 style="margin-bottom: 20px;">📝 Form Responsiveness Test</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="test-name">Project Name</label>
+                <input type="text" id="test-name" class="form-control" placeholder="Enter project name">
+            </div>
+            <div class="form-group">
+                <label for="test-location">Location</label>
+                <select id="test-location" class="form-control">
+                    <option>Select State</option>
+                    <option>Maharashtra</option>
+                    <option>Gujarat</option>
+                    <option>Kerala</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="test-area">Area (hectares)</label>
+                <input type="number" id="test-area" class="form-control" placeholder="0">
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn">Save Project</button>
+            <button class="btn outline">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Table Test -->
+<div class="table-container" style="margin-bottom: 24px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Location</th>
+                <th>Area (ha)</th>
+                <th>Status</th>
+                <th>Credits</th>
+                <th>Revenue</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sundarbans Restoration</td>
+                <td>West Bengal</td>
+                <td>150.5</td>
+                <td><span class="badge success">Verified</span></td>
+                <td>1,205</td>
+                <td>$18,075</td>
+                <td>
+                    <button class="btn" style="padding: 6px 12px; font-size: 12px;">View</button>
+                    <button class="btn outline" style="padding: 6px 12px; font-size: 12px;">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Mangrove Conservation</td>
+                <td>Gujarat</td>
+                <td>89.2</td>
+                <td><span class="badge warning">Pending</span></td>
+                <td>0</td>
+                <td>$0</td>
+                <td>
+                    <button class="btn" style="padding: 6px 12px; font-size: 12px;">View</button>
+                    <button class="btn outline" style="padding: 6px 12px; font-size: 12px;">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Coastal Wetland Project</td>
+                <td>Kerala</td>
+                <td>234.8</td>
+                <td><span class="badge success">Verified</span></td>
+                <td>1,874</td>
+                <td>$28,110</td>
+                <td>
+                    <button class="btn" style="padding: 6px 12px; font-size: 12px;">View</button>
+                    <button class="btn outline" style="padding: 6px 12px; font-size: 12px;">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Blue Carbon Initiative</td>
+                <td>Maharashtra</td>
+                <td>67.3</td>
+                <td><span class="badge danger">Rejected</span></td>
+                <td>0</td>
+                <td>$0</td>
+                <td>
+                    <button class="btn" style="padding: 6px 12px; font-size: 12px;">View</button>
+                    <button class="btn danger" style="padding: 6px 12px; font-size: 12px;">Resubmit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Seagrass Restoration</td>
+                <td>Tamil Nadu</td>
+                <td>123.7</td>
+                <td><span class="badge primary">Under Review</span></td>
+                <td>0</td>
+                <td>$0</td>
+                <td>
+                    <button class="btn" style="padding: 6px 12px; font-size: 12px;">View</button>
+                    <button class="btn outline" style="padding: 6px 12px; font-size: 12px;">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Button Test -->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="padding: 24px;">
+        <h3 style="margin-bottom: 20px;">🔘 Button Responsiveness Test</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <button class="btn">Primary Button</button>
+            <button class="btn secondary">Secondary</button>
+            <button class="btn outline">Outline</button>
+            <button class="btn danger">Danger</button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="badge primary">Primary Badge</span>
+            <span class="badge success">Success Badge</span>
+            <span class="badge warning">Warning Badge</span>
+            <span class="badge danger">Danger Badge</span>
+        </div>
+    </div>
+</div>
+
+<!-- Chart Container Test -->
+<div class="card">
+    <div style="padding: 24px;">
+        <h3 style="margin-bottom: 20px;">📊 Chart Container Test</h3>
+        <div class="chart-container" style="background: #f8f9fa; border: 2px dashed #dee2e6; display: flex; align-items: center; justify-content: center; min-height: 250px;">
+            <div style="text-align: center; color: #6c757d;">
+                <i class="fas fa-chart-bar" style="font-size: 48px; margin-bottom: 12px;"></i>
+                <p>Chart would render here</p>
+                <div class="chart-simple" style="display: none;">
+                    <small>📱 Mobile: Simple chart version</small>
+                </div>
+                <div class="chart-complex">
+                    <small>💻 Desktop: Complex chart version</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Device Testing Grid -->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="padding: 24px;">
+        <h3 style="margin-bottom: 20px;">🔬 Device & Viewport Testing</h3>
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="card" style="text-align: center; padding: 16px;">
+                <h4>📱 Mobile Small</h4>
+                <p>320px - 575px</p>
+                <div class="badge primary" id="mobile-status">Hidden</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <h4>📲 Mobile Large</h4>
+                <p>576px - 767px</p>
+                <div class="badge warning" id="mobile-large-status">Hidden</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <h4>🖥️ Tablet</h4>
+                <p>768px - 991px</p>
+                <div class="badge info" id="tablet-status">Hidden</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <h4>💻 Desktop</h4>
+                <p>992px - 1199px</p>
+                <div class="badge success" id="desktop-status">Hidden</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <h4>🗺️ Large Monitor</h4>
+                <p>1200px+</p>
+                <div class="badge danger" id="large-status">Hidden</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Enhanced Debug Info -->
+<div class="card" style="margin-top: 24px; background: #f8f9fa;">
+    <div style="padding: 16px;">
+        <h4 style="color: #6c757d; margin-bottom: 12px;">🔍 Advanced Device Information</h4>
+        <div id="debug-info" style="font-family: monospace; font-size: 14px; color: #495057; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div>
+                <strong>Viewport:</strong><br>
+                Width: <span id="viewport-width">-</span>px<br>
+                Height: <span id="viewport-height">-</span>px
+            </div>
+            <div>
+                <strong>Screen:</strong><br>
+                Width: <span id="screen-width">-</span>px<br>
+                Height: <span id="screen-height">-</span>px
+            </div>
+            <div>
+                <strong>Device:</strong><br>
+                Type: <span id="device-type">-</span><br>
+                DPR: <span id="device-pixel-ratio">-</span>
+            </div>
+            <div>
+                <strong>Orientation:</strong><br>
+                Mode: <span id="orientation">-</span><br>
+                Angle: <span id="orientation-angle">-</span>°
+            </div>
+            <div>
+                <strong>Touch Support:</strong><br>
+                Touch: <span id="touch-support">-</span><br>
+                Pointer: <span id="pointer-type">-</span>
+            </div>
+            <div>
+                <strong>Browser:</strong><br>
+                UA: <span id="user-agent">-</span><br>
+                Language: <span id="browser-language">-</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Comprehensive device detection and testing
+function updateDebugInfo() {
+    // Viewport dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Screen dimensions
+    const screenWidth = screen.width;
+    const screenHeight = screen.height;
+    
+    // Device pixel ratio
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    
+    // Orientation
+    const orientation = viewportHeight > viewportWidth ? 'Portrait' : 'Landscape';
+    const orientationAngle = screen.orientation ? screen.orientation.angle : 0;
+    
+    // Touch support
+    const touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const pointerType = window.PointerEvent ? 'Modern' : 'Legacy';
+    
+    // Browser info
+    const userAgent = navigator.userAgent.split(' ')[0] + '...';
+    const browserLanguage = navigator.language;
+    
+    // Device type classification
+    let deviceType = 'Unknown';
+    let activeBreakpoint = 'none';
+    
+    if (viewportWidth <= 575.98) {
+        deviceType = 'Mobile Small';
+        activeBreakpoint = 'mobile';
+    } else if (viewportWidth <= 767.98) {
+        deviceType = 'Mobile Large';
+        activeBreakpoint = 'mobile-large';
+    } else if (viewportWidth <= 991.98) {
+        deviceType = 'Tablet';
+        activeBreakpoint = 'tablet';
+    } else if (viewportWidth <= 1199.98) {
+        deviceType = 'Desktop';
+        activeBreakpoint = 'desktop';
+    } else {
+        deviceType = 'Large Monitor';
+        activeBreakpoint = 'large';
+    }
+    
+    // Update DOM elements
+    document.getElementById('viewport-width').textContent = viewportWidth;
+    document.getElementById('viewport-height').textContent = viewportHeight;
+    document.getElementById('screen-width').textContent = screenWidth;
+    document.getElementById('screen-height').textContent = screenHeight;
+    document.getElementById('device-type').textContent = deviceType;
+    document.getElementById('device-pixel-ratio').textContent = devicePixelRatio;
+    document.getElementById('orientation').textContent = orientation;
+    document.getElementById('orientation-angle').textContent = orientationAngle;
+    document.getElementById('touch-support').textContent = touchSupport ? 'Yes' : 'No';
+    document.getElementById('pointer-type').textContent = pointerType;
+    document.getElementById('user-agent').textContent = userAgent;
+    document.getElementById('browser-language').textContent = browserLanguage;
+    
+    // Update breakpoint status badges
+    const statusElements = {
+        'mobile-status': 'mobile',
+        'mobile-large-status': 'mobile-large',
+        'tablet-status': 'tablet',
+        'desktop-status': 'desktop',
+        'large-status': 'large'
+    };
+    
+    Object.keys(statusElements).forEach(id => {
+        const element = document.getElementById(id);
+        if (statusElements[id] === activeBreakpoint) {
+            element.textContent = 'Active';
+            element.className = 'badge success';
+        } else {
+            element.textContent = 'Hidden';
+            element.className = 'badge secondary';
+        }
+    });
+    
+    // Console logging for development
+    console.log('📱 Current device:', deviceType, `(${viewportWidth}px)`);
+}
+
+// Device simulation functions
+function simulateDevice(deviceType) {
+    const deviceSizes = {
+        'mobile': { width: 375, height: 812 },
+        'tablet': { width: 768, height: 1024 },
+        'desktop': { width: 1200, height: 800 },
+        'ultrawide': { width: 1920, height: 1080 }
+    };
+    
+    const size = deviceSizes[deviceType];
+    if (size) {
+        // This would work in browser dev tools
+        console.log(`🔍 Simulate ${deviceType}: ${size.width}x${size.height}px`);
+        console.log('Use browser dev tools responsive mode to test this size');
+        
+        // Show notification
+        showNotification(`📱 Simulating ${deviceType.charAt(0).toUpperCase() + deviceType.slice(1)}: ${size.width}x${size.height}px`, 'info');
+    }
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 20px;
+        border-radius: 12px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        max-width: 400px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        backdrop-filter: blur(10px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    const colors = {
+        success: '#10b981',
+        error: '#ef4444',
+        warning: '#f59e0b',
+        info: '#3b82f6'
+    };
+    
+    notification.style.background = colors[type] || colors.info;
+    notification.innerHTML = message;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Responsive breakpoint change detection
+let currentBreakpoint = 'unknown';
+function checkBreakpointChange() {
+    const width = window.innerWidth;
+    let newBreakpoint;
+    
+    if (width <= 575.98) newBreakpoint = 'xs';
+    else if (width <= 767.98) newBreakpoint = 'sm';
+    else if (width <= 991.98) newBreakpoint = 'md';
+    else if (width <= 1199.98) newBreakpoint = 'lg';
+    else newBreakpoint = 'xl';
+    
+    if (newBreakpoint !== currentBreakpoint) {
+        const breakpointNames = {
+            'xs': 'Extra Small (Mobile)',
+            'sm': 'Small (Large Mobile)',
+            'md': 'Medium (Tablet)',
+            'lg': 'Large (Desktop)',
+            'xl': 'Extra Large (Large Monitor)'
+        };
+        
+        console.log(`🔄 Breakpoint changed: ${breakpointNames[newBreakpoint]} (${width}px)`);
+        currentBreakpoint = newBreakpoint;
+        
+        // Show breakpoint change notification
+        if (currentBreakpoint !== 'unknown') {
+            showNotification(`📱 Switched to ${breakpointNames[newBreakpoint]}`, 'success');
+        }
+    }
+}
+
+// Performance-optimized resize handler
+let resizeTimeout;
+function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateDebugInfo();
+        checkBreakpointChange();
+    }, 100);
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateDebugInfo();
+    checkBreakpointChange();
+    
+    console.log('🌍 Universal Responsive Design System Loaded');
+    console.log('🔧 Resize the window or use browser dev tools to test responsiveness');
+    console.log('📱 Mobile navigation: < 768px shows hamburger menu');
+});
+
+// Event listeners
+window.addEventListener('resize', handleResize);
+window.addEventListener('orientationchange', () => {
+    setTimeout(updateDebugInfo, 100); // Delay for orientation change to complete
+});
+
+// Keyboard shortcuts for testing
+document.addEventListener('keydown', function(e) {
+    if (e.altKey) {
+        switch(e.key) {
+            case '1': simulateDevice('mobile'); e.preventDefault(); break;
+            case '2': simulateDevice('tablet'); e.preventDefault(); break;
+            case '3': simulateDevice('desktop'); e.preventDefault(); break;
+            case '4': simulateDevice('ultrawide'); e.preventDefault(); break;
+        }
+    }
+});
+
+console.log('⌨️ Keyboard shortcuts: Alt+1 (Mobile), Alt+2 (Tablet), Alt+3 (Desktop), Alt+4 (Ultra-wide)');
+</script>
+
+{% endblock %}
